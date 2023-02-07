@@ -84,13 +84,3 @@ router.delete('/:id', async (request, response)=> {
 })
 
 module.exports = router;
-
-
-/*
-    try {
-
-    } catch (error){
-        console.log(error);
-        response.status(500).json({msg: "Something went wrong!"});
-    }
-*/
