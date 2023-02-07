@@ -14,7 +14,7 @@ const Sequelize = require('sequelize');
         dialect: "mysql",
         port: 3306,
         dialectOptions: {
-          decimalNumbers:true;
+          decimalNumbers:true
         }
       }
     )
