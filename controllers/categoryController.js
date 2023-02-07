@@ -27,4 +27,26 @@ router.get("/:id", async (request, response)=> {
     }
 });
 
+router.post("/", async (request, response)=> {
+    try {
+        const newCategory = await Category.create({
+            category_name: request.body.category_name
+        })
+        response.status(200).json(newCategory);
+    } catch (error){
+        console.log(error);
+        response.status(500).json({msg: "Something went wrong!"});
+    }
+})
+
 module.exports = router;
+
+
+/*
+    try {
+
+    } catch (error){
+        console.log(error);
+        response.status(500).json({msg: "Something went wrong!"});
+    }
+*/
