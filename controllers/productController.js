@@ -88,5 +88,6 @@ router.delete('/:id', async (request, response)=> {
         console.log(error);
         response.status(500).json({msg: "Something went wrong!"});
     }
-})
+});
+
 module.exports = router;
