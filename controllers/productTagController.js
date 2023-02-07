@@ -11,4 +11,20 @@ router.get("/", async (request, response)=> {
     }
 })
 
+router.get("/:id", async (request, response)=> {
+    try {
+        const productTag = await ProductTag.findByPk(request.params.id);
+        console.log(productTag);
+        if (productTag){
+            response.status(200).json(productTag);
+        } else {
+            response.status(404).json({msg: "Product Tag not found!"});
+        }
+    } catch (error) {
+        console.log(error);
+        response.status(500).json({msg: "Something went wrong!"});
+    }
+});
+
+
 module.exports = router;
