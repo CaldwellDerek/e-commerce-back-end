@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const {Category} = require("../models");
 
+// Get all Categories Route
 router.get("/", async (request, response)=> {
     try {
         const allCategories = await Category.findAll();
@@ -12,6 +13,7 @@ router.get("/", async (request, response)=> {
     }
 });
 
+// Get Category by ID route
 router.get("/:id", async (request, response)=> {
     try {
         const category = await Category.findByPk(request.params.id);
@@ -27,6 +29,7 @@ router.get("/:id", async (request, response)=> {
     }
 });
 
+// Create new Category route
 router.post("/", async (request, response)=> {
     try {
         const newCategory = await Category.create({
@@ -39,6 +42,7 @@ router.post("/", async (request, response)=> {
     }
 });
 
+// Update by Category ID route
 router.put("/:id", async (request, response)=> {
     try {
         const updateCategory = await Category.update({
@@ -59,6 +63,25 @@ router.put("/:id", async (request, response)=> {
         response.status(500).json({msg: "Something went wrong!"});
     }
 });
+
+// Delete Category by ID route
+router.delete('/:id', async (request, response)=> {
+    try {
+        const deleteCategory = await Category.destroy({
+            where: {
+                id:request.params.id
+            }
+        });
+        if (deleteCategory) {
+            response.status(200).json(deleteCategory);
+        } else {
+            response.status(404).json({msg: "Category not found!"});
+        }
+    } catch (error){
+        console.log(error);
+        response.status(500).json({msg: "Something went wrong!"});
+    }
+})
 
 module.exports = router;
 
