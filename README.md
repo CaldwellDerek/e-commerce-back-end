@@ -50,5 +50,20 @@ All of my work can be viewed at my GitHub profile: [CaldwellDerek](https://githu
 ## Media
 
 ### Screenshots
+---
+Example .env File:
 
-### Video
+![example-env](./assets/images/env-example.jpg)
+
+Example Database Search with Insomnia:(1)
+
+![example-all-products](./assets/images/example-fetch-all-products.jpg)
+
+Example Database Search with Insomnia(2):
+![example-one-product](./assets/images/example-fetch-product-id.jpg)
+
+### Videos
+---
+A walkthrough video can be viewed [HERE](https://drive.google.com/file/d/11TffzytvZYJG3lPdLg-EiatIM6tEosNB/view)
+
+A copy of the video is saved to the assets directory under the videos folder.
